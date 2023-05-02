@@ -21,15 +21,22 @@
     </header>
     <main class="container">
         <div class="row">
-            <button type="button" class="btn btn-primary">USUARIO</button>
-        </div>
+            <form class="row g-3  needs-validation" action="http://localhost/insertarC.php" method="get" novalidate>
+                <div>
+                    <label for="validationCustom01" class="input-group-text">USUARIO</label>
+                    <input type="text" aria-label="Nombre" name="Usuario" class="form-control" placeholder="Introducir Usuario" required>
+                </div>
+                <div>
+                    <label for="Direccion" class="input-group-text">CONTRASEÑA</label>
+                    <input class="form-control" type="password" name="Password" placeholder="Introducir Contraseña" required/>
+                </div>
+                </div>
         <br >
         <div class="row">
-            <button type="button" class="btn btn-primary">PASS</button>
-        </div>
-        <br >
-        <div class="row">
-            <button type="button" class="btn btn-primary">FASS</button>
+            <div class="col">
+                <button type="button" class="btn btn-primary">ENTRAR</button>
+            </div>
+            
         </div>
         <br >
         <div class="card">
