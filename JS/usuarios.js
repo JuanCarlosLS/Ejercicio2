@@ -16,6 +16,10 @@ function usuarios(id,dni,nom,ap,us,pas,f,dir,tel,t_us,ac){
     let zls = new usuarios(2,"7866984R","Zaira","López Sempere","zls",1234,"img","C. de las lomas blancas",634983216,"1","Si");
     let erl = new usuarios(3,"9158972E","Emma","Requena López","erl",1234,"img","C. de borja",695866216,"1","Si");
 
+  const usuarios_arr = [jcls,zls,erl];
+
+  console.log(usuarios_arr);
+
 function Asignaturas(id,asig){
     this.id=id;
     this.asignatura=asig; 
@@ -27,3 +31,7 @@ let pw = new Asignaturas(3,"Programacion Web");
 let eie = new Asignaturas(4,"E.I.E");
 let r = new Asignaturas(5,"Redes");
 let i = new Asignaturas(6,"Ingles");
+
+const asignaturas_arr = [sop,si,pw,eie,r,i];
+
+console.log(asignaturas_arr);
