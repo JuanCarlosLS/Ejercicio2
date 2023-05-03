@@ -1,4 +1,11 @@
 // Example starter JavaScript for disabling form submissions if there are invalid fields
+function usuarios(a,b){
+  this.usuario=a;
+  this.password=b;
+}
+
+
+
 (function () {
     'use strict'
   
