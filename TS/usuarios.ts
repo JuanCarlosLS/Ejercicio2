@@ -1,29 +1,29 @@
 //creamos función usuarios
 const usuarios = function usuarios(id:number,dni:string,nom:string,ap:string,us:string,pas:string,f:string,dir:string,tel:number,t_us:string,ac:boolean){
-    this.id=id;
-    this.dni=dni;
-    this.nombre=nom;
-    this.apellidos=ap;
-    this.usuario=us;
-    this.contraseña=pas;
-    this.foto=f;
-    this.direccion=dir;
-    this.telefono=tel;
-    this.tipo_usuario=t_us;
-    this.activo=ac;
-  }
+  this.id=id;
+  this.dni=dni;
+  this.nombre=nom;
+  this.apellidos=ap;
+  this.usuario=us;
+  this.contraseña=pas;
+  this.foto=f;
+  this.direccion=dir;
+  this.telefono=tel;
+  this.tipo_usuario=t_us;
+  this.activo=ac;
+}
 
-    //creamos 3 objetos
-    let jcls = new usuarios(1,"4876589W","Jaun Carlos","López Sempere","jcls","1234","img","C. de las lomas blancas",634986426,"1",true);
-    let zls = new usuarios(2,"7866984R","Zaira","López Sempere","zls","1234","img","C. de las lomas blancas",634983216,"1",true);
-    let erl = new usuarios(3,"9158972E","Emma","Requena López","erl","1234","img","C. de borja",695866216,"1",true);
+  //creamos 3 objetos
+  let jcls = new usuarios(1,"4876589W","Jaun Carlos","López Sempere","jcls","1234","img","C. de las lomas blancas",634986426,"1",true);
+  let zls = new usuarios(2,"7866984R","Zaira","López Sempere","zls","1234","img","C. de las lomas blancas",634983216,"1",true);
+  let erl = new usuarios(3,"9158972E","Emma","Requena López","erl","1234","img","C. de borja",695866216,"1",true);
 
-  const usuarios_arr = [jcls,zls,erl];
+const usuarios_arr = [jcls,zls,erl];
 
 //creamos lafunción cursos
 const cursos =  function cursos(id:number,asig:string){
-    this.id=id;
-    this.asignatura=asig; 
+  this.id=id;
+  this.asignatura=asig; 
 }
 
 //creamos un objeto por curso
@@ -38,8 +38,8 @@ const cursos_arr = [sop,si,pw,eie,r,i];
 
 //creamos la función asignatturas
 const asignaturas = function asignaturas(id:number,prof:string){
-  this.id=id;
-  this.profesor=prof;
+this.id=id;
+this.profesor=prof;
 }
 
 //creamos los objetos asignaturas
@@ -54,11 +54,11 @@ const asignaturas_arr  = [vic,moi,cri,jt,jm,yo];
 
 // creamos la función notas
 const notas = function notas(id:number,alum:number,asig:number,cur:number,nota:number){
-  this.id  = id;
-  this.id_alumno = alum;
-  this.id_asignatura = asig;
-  this.id_curso = cur;
-  this.nota = nota;
+this.id  = id;
+this.id_alumno = alum;
+this.id_asignatura = asig;
+this.id_curso = cur;
+this.nota = nota;
 }
 
 
