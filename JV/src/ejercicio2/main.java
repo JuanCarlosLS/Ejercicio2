@@ -40,6 +40,8 @@ public class main {
 			instruccion = conexion.createStatement();
 			PreparedStatement query = conexion.prepareStatement ("Select cursos.asignatura  as asignatura, usuarios.nombre as nombre,notas.nota as nota,asignaturas.profesor as profesor from  asignaturas,cursos,notas,usuarios where notas.id_alumno = usuarios.id AND notas.id_asignatura = cursos.id_asignatura AND notas.id_curso = asignaturas.id_profesor;"); 
 			
+			PreparedStatement query1 = conexion.prepareStatement ("Select usuarios.nombre as nombre from  usuarios;"); 
+			
 			PreparedStatement ps1 = conexion.prepareStatement ("INSERT INTO usuarios (dni,nombre, apellidos, usuario, contraseña, dirección, telefono ) VALUES (?,?,?,?,?,?,?)");
 			ps1.setString(1, "9158972E");
 			ps1.setString(2, "Lukas");
@@ -138,6 +140,17 @@ public class main {
 			}
 			else
 				System.out.println("La consulta no ha devuelto resultados");
+			
+			funciona = query1.execute();
+			
+			if(funciona) {
+				ResultSet loteResultados = query1. getResultSet();
+				System.out.printf("alumnos\n");
+				while (loteResultados.next()) {
+					System.out.printf("\n%s", loteResultados.getString("nombre"));
+				}
+			}
+			
 			}
 		catch (SQLException e) {
 			e.printStackTrace();
