@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class main {
-
+			
 	public static void main(String[] args) {
 		Statement instruccion = null;
 		ResultSet resultados = null;
@@ -37,10 +37,14 @@ public class main {
 			// muestra información de la versión del driver MySQL (mysql-connector-java-8.0.18)
 			System.out.println("Versión del driver: " + conexion.getMetaData().getDriverVersion());
 			
+			System.out.print("\nte has conectado a la base de datos\n");
+			
 			instruccion = conexion.createStatement();
 			PreparedStatement query = conexion.prepareStatement ("Select cursos.asignatura  as asignatura, usuarios.nombre as nombre,notas.nota as nota,asignaturas.profesor as profesor from  asignaturas,cursos,notas,usuarios where notas.id_alumno = usuarios.id AND notas.id_asignatura = cursos.id_asignatura AND notas.id_curso = asignaturas.id_profesor;"); 
 			
 			PreparedStatement query1 = conexion.prepareStatement ("Select usuarios.nombre as nombre from  usuarios;"); 
+			
+			PreparedStatement query2 = conexion.prepareStatement ("Select usuarios.nombre as nombre from  usuarios where nombre='Zaira';"); 
 			
 			PreparedStatement ps1 = conexion.prepareStatement ("INSERT INTO usuarios (dni,nombre, apellidos, usuario, contraseña, dirección, telefono ) VALUES (?,?,?,?,?,?,?)");
 			ps1.setString(1, "9158972E");
@@ -117,6 +121,17 @@ public class main {
 			ps13.setString(3, "6");
 			ps13.setString(4, "6");
 			
+			PreparedStatement up1 = conexion.prepareStatement("UPDATE notas set nota=? where id_notas=?");
+			up1.setString(1, "4");
+			up1.setString(2, "25");
+			
+			PreparedStatement dt1 = conexion.prepareStatement("DELETE FROM notas where id_notas=?");
+			dt1.setString(1,"25");
+			
+			PreparedStatement cf = conexion.prepareStatement("CREATE FUNCTION calmatricula(notas FLOAT) RETURNS INT(10) BEGIN DECLARE matricula INT(10); SET matricula = notas; RETURN matricula; END;");
+			
+			PreparedStatement cf1 = conexion.prepareStatement("CALL calmatricula(5)");
+			
 			ps1.execute();
 			ps2.execute();
 			ps3.execute();
@@ -130,6 +145,11 @@ public class main {
 			ps11.execute();
 			ps12.execute();
 			ps13.execute();
+			up1.execute();
+			dt1.execute();
+			cf.execute();
+			cf1.execute();
+			
 			boolean funciona = query.execute();
 			
 			if(funciona) {
@@ -150,7 +170,20 @@ public class main {
 					System.out.printf("\n%s", loteResultados.getString("nombre"));
 				}
 			}
+			else
+				System.out.println("La consulta no ha devuelto resultados");
 			
+			funciona = query2.execute();
+			
+			if(funciona) {
+				ResultSet loteResultados = query2. getResultSet();
+				System.out.printf("\n\nalumno\n");
+				while (loteResultados.next()) {
+					System.out.printf("\n%s", loteResultados.getString("nombre"));
+			}
+			}
+			else
+				System.out.println("La consulta no ha devuelto resultados");
 			}
 		catch (SQLException e) {
 			e.printStackTrace();
