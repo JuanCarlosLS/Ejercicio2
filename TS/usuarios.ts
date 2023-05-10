@@ -16,7 +16,7 @@ const usuarios = function usuarios(id:number,dni:string,nom:string,ap:string,us:
   //creamos 3 objetos
   let jcls = new usuarios(1,"4876589W","Jaun Carlos","López Sempere","jcls","1234","img","C. de las lomas blancas",634986426,"1",true);
   let zls = new usuarios(2,"7866984R","Zaira","López Sempere","zls","1234","img","C. de las lomas blancas",634983216,"1",true);
-  let erl = new usuarios(3,"9158972E","Emma","Requena López","erl","1234","img","C. de borja",695866216,"1",true);
+  let erl = new usuarios(3,"9158972E","Emma","Requena López","erl","1234","img","Plaza la viña",695866216,"1",true);
 
 const usuarios_arr = [jcls,zls,erl];
 
