@@ -1,42 +1,33 @@
-import { Injectable } from '@angular/core';
+import{Asignaturas} from './asignaturas';
+import { Usuarios } from './usuarios';
+import { Cursos } from './cursos';
+import { Notas } from './notas';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class UsuariosService {
+export const USUARIOS: Usuarios[]=[
+    {id: 1, dni:'4876589W', nom:'Juan Carlos', ap:'Lopez Sempere', us: 'jcls', pas:'1234', f:'img', dir:'C. de las lomas blancas', tel:634986426,t_us:'1',ac:true },
+    {id: 1, dni:'7866984R', nom:'Zaira', ap:'Lopez Sempere', us: 'zls', pas:'1234', f:'img', dir:'C. de las lomas blancas', tel:634983216,t_us:'1',ac:true },
+    {id: 1, dni:'9158972E', nom:'Emma', ap:'Requena Lopez', us: 'erl', pas:'1234', f:'img', dir:'Plaza la viña', tel:695866216,t_us:'1',ac:true }
+];
 
-  createUs(){
-    const usuarios =[
-      {id: 1, dni:'4876589W', nom:'Juan Carlos', ap:'Lopez Sempere', us: 'jcls', pas:'1234', f:'', dir:'C. de las lomas blancas', tel:634986426,t_us:'1',ac:true },
-      {id: 1, dni:'7866984R', nom:'Zaira', ap:'Lopez Sempere', us: 'zls', pas:'1234', f:'', dir:'C. de las lomas blancas', tel:634983216,t_us:'1',ac:true },
-      {id: 1, dni:'9158972E', nom:'Emma', ap:'Requena Lopez', us: 'erl', pas:'1234', f:'', dir:'Plaza la viña', tel:695866216,t_us:'1',ac:true }
-    ];
-    return{usuarios};
-  }
-  createCs(){
-    const cursos =[
+export const CURSOS: Cursos[]=[
       {id: 1, asig:'Sistemas Operativos en Red'},
       {id: 2, asig:'Seguridad Informática'},
       {id: 3, asig:'Programación Web'},
       {id: 4, asig:'E.I.E'},
       {id: 5, asig:'Redes'},
       {id: 6, asig:'Ingles'}
-    ];
-    return{cursos};
-  }
-  createAs(){
-    const asignaturas =[
-      {id: 1, prof:'Victor'},
-      {id: 2, prof:'Moises'},
-      {id: 3, prof:'cristobal'},
-      {id: 4, prof:'Jose Tomas'},
-      {id: 5, prof:'Juan Maria'},
-      {id: 6, prof:'Yolanda'}
-    ];
-    return{asignaturas};
-  }
-  createNa(){
-    const notas =[
+]
+
+export const ASIGNATURAS: Asignaturas[] = [
+    {id: 1, prof:'Victor'},
+    {id: 2, prof:'Moises'},
+    {id: 3, prof:'cristobal'},
+    {id: 4, prof:'Jose Tomas'},
+    {id: 5, prof:'Juan Maria'},
+    {id: 6, prof:'Yolanda'}
+];
+
+export const NOTAS: Notas[] = [
       {id: 1, alum: 1, asig: 1, cur: 1, nota: 9},
       {id: 2, alum: 1, asig: 2, cur: 2, nota: 7},
       {id: 3, alum: 1, asig: 3, cur: 3, nota: 10},
@@ -55,8 +46,4 @@ export class UsuariosService {
       {id: 16, alum: 3, asig: 4, cur: 4, nota: 8},
       {id: 17, alum: 3, asig: 5, cur: 5, nota: 6},
       {id: 18, alum: 3, asig: 6, cur: 6, nota: 7}
-    ];
-    return{notas};
-  }
-    
-  }
+]
