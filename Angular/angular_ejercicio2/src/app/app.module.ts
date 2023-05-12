@@ -7,6 +7,7 @@ import { MenuComponent } from './menu/menu.component';
 import { LogingComponent } from './loging/loging.component';
 import { PieDePaginaComponent } from './pie-de-pagina/pie-de-pagina.component';
 import { UsuarioComponent } from './usuario/usuario.component';
+import { BuscadorComponent } from './buscador/buscador.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { UsuarioComponent } from './usuario/usuario.component';
     MenuComponent,
     LogingComponent,
     PieDePaginaComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    BuscadorComponent
   ],
   imports: [
     BrowserModule,
