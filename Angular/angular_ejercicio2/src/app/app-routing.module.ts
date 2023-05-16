@@ -5,7 +5,7 @@ import { LogingComponent } from './loging/loging.component';
 import { BuscadorComponent } from './buscador/buscador.component';
 
 const routes: Routes = [
-  {path:'', redirectTo: '/usuario', pathMatch: 'full'},
+  {path:'', redirectTo: '/loging', pathMatch: 'full'},
   {path:'loging',component: LogingComponent},
   {path:'usuario',component: UsuarioComponent},
   {path:'buscador',component: BuscadorComponent}
