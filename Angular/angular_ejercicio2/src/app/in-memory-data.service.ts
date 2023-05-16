@@ -4,9 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UsuariosService {
-  getUsuarios() {
-    throw new Error('Method not implemented.');
-  }
 
   createUs(){
     const usuarios =[
