@@ -1,6 +1,6 @@
 import{Asignaturas} from './asignaturas';
 import { Usuarios } from './usuarios';
-import { Cursos } from './cursos';
+import { Curso } from './cursos';
 import { Notas } from './notas';
 
 export const USUARIOS: Usuarios[]=[
@@ -9,7 +9,7 @@ export const USUARIOS: Usuarios[]=[
     {id: 1, dni:'9158972E', nom:'Emma', ap:'Requena Lopez', us: 'erl', pas:'1234', f:'img', dir:'Plaza la viña', tel:695866216,t_us:'1',ac:true }
 ];
 
-export const CURSOS: Cursos[]=[
+export const CURSOS: Curso[]=[
       {id: 1, asig:'Sistemas Operativos en Red'},
       {id: 2, asig:'Seguridad Informática'},
       {id: 3, asig:'Programación Web'},

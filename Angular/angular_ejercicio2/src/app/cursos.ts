@@ -1,4 +1,4 @@
-export interface Cursos {
+export interface Curso {
     id: number;
     asig: string;
 }
