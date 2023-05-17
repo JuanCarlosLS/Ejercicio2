@@ -1,4 +1,4 @@
-export interface Notas {
+export interface Nota {
     id: number;
     alum: number;
     asig: number;

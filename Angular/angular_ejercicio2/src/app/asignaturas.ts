@@ -1,4 +1,4 @@
-export interface Asignaturas {
+export interface Asignatura {
 id: number;
 prof: string;
 }
