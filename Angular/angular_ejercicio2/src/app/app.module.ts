@@ -7,6 +7,8 @@ import { LogingComponent } from './loging/loging.component';
 import { PieDePaginaComponent } from './pie-de-pagina/pie-de-pagina.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { BuscadorComponent } from './buscador/buscador.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { BuscadorComponent } from './buscador/buscador.component';
     LogingComponent,
     PieDePaginaComponent,
     UsuarioComponent,
-    BuscadorComponent
+    BuscadorComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
