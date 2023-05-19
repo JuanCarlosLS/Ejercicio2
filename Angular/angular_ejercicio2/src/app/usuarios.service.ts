@@ -10,10 +10,18 @@ import { MessageService } from './message.service';
 })
 export class UsuariosService {
 
-  constructor(private messageService: MessageService) { }
+  private usuariosUrl = 'http://localhost:8080/api/usuarios';
+
+  private log(message: string) {
+    this.messageService.add(`HeroService: ${message}`);
+  }
+
+  constructor(
+    private http: HttpClient,
+    private messageService: MessageService) { }
 
   getUsuarios(): Observable<Usuario[]>{
-    this.messageService.add('UsuariosService: fetched usuarios');
-    return of(USUARIOS);
+    console.log(this.http.get<Usuario[]>(this.usuariosUrl))
+    return this.http.get<Usuario[]>(this.usuariosUrl)
   }
 }
