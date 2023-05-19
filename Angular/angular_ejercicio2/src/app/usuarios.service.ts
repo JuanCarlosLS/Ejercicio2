@@ -21,7 +21,7 @@ export class UsuariosService {
     private messageService: MessageService) { }
 
   getUsuarios(): Observable<Usuario[]>{
-    console.log(this.http.get<Usuario[]>(this.usuariosUrl))
-    return this.http.get<Usuario[]>(this.usuariosUrl)
+    this.messageService.add('UsuarioService: fetched usuarios');
+  return of(USUARIOS);
   }
 }
