@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Usuario } from './usuarios';
@@ -11,7 +11,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class UsuariosService {
 
-  private usuariosUrl = 'http://localhost:8080/api/usuarios';
+  private usuariosUrl: string = 'http://localhost:8080/api/usuarios';
 
   private log(message: string) {
     this.messageService.add(`UsuarioService: ${message}`);
@@ -36,9 +36,8 @@ export class UsuariosService {
     private messageService: MessageService) { }
 
   getUsuarios(): Observable<Usuario[]>{
-    return this.http.get<Usuario[]>(this.usuariosUrl)
-    .pipe(
-      catchError(this.handleError<Usuario[]>('getUsuarios', []))
-    );
+    const listaObservabledeUsuarios = of(USUARIOS)
+    this.messageService.add('UsuarioService: usuarios recuperados');
+  return listaObservabledeUsuarios;
   }
 }

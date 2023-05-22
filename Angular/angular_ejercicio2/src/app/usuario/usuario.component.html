@@ -82,30 +82,5 @@
           <p>Tareas pendientes.</p>
         </div>
       </div>
-
       <br>
-
-      <table class="table table-bordered">
-        <thead class="table-light">
-            <tr>
-                <th>#</th>
-                <th>Asignaturas</th>
-                <th>Notas</th>
-            </tr>  
-        </thead>
-        <tbody *ngFor="let curso of cursos">
-            <tr>
-                <td>{{curso.id}}</td>
-                <td>{{curso.asig}}</td>
-                <td>9</td>
-            </tr> 
-        </tbody>
-        
-    </table>
-    <div class="container">
-        <div *ngFor="let usuario of usuarios">
-           {{usuario.nom}}
-           {{usuario.dni}} 
-        </div>
-    </div>
 </main>
