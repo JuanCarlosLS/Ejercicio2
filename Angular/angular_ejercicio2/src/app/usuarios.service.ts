@@ -11,7 +11,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class UsuariosService {
 
-  private usuariosUrl: string = 'http://localhost:8080/api/usuarios';
+  private usuariosUrl: string = 'api/usuarios';
 
   private log(message: string) {
     this.messageService.add(`UsuarioService: ${message}`);
@@ -36,8 +36,8 @@ export class UsuariosService {
     private messageService: MessageService) { }
 
   getUsuarios(): Observable<Usuario[]>{
-    const listaObservabledeUsuarios = of(USUARIOS)
+   // const listaObservabledeUsuarios = of(USUARIOS)
     this.messageService.add('UsuarioService: usuarios recuperados');
-  return listaObservabledeUsuarios;
+  return this.http.get<Usuario[]>(this.usuariosUrl);
   }
 }
