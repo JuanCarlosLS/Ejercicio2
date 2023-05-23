@@ -37,5 +37,14 @@ export class UsuarioComponent implements OnInit{
 
   }
 
+  save(): void {
+    //this.usuariosService.updateUsuario(this.usuario)
+      //.subscribe(() => this.goBack());
+  }
+
+  delete(usuario: Usuario): void {
+    this.usuarios = this.usuarios.filter(h => h !== usuario);
+    this.usuariosService.deleteUsuario(usuario).subscribe();
+  }
   
 }

@@ -116,4 +116,17 @@
            {{usuario.nom}}
         </div>
     </div>
+    <div class="card">
+       <button (click)="save()">save</button>
+        <ul class="card-body">
+    <li *ngFor="let usuario of listaUsuarios">
+      <a routerLink="/detail/{{usuario.nom}}">
+        <span class="badge">{{usuario.nom}}</span> {{usuario.name}}
+      </a>
+      <button class="delete" title="delete usuario"
+        (click)="delete(usuario)">x</button>
+    </li>
+  </ul>
+    </div>
+  
 </main>
