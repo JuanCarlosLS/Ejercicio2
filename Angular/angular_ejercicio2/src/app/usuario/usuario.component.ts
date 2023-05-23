@@ -33,7 +33,7 @@ export class UsuarioComponent implements OnInit{
 
   getUsuarios() {
    this.usuariosService.getUsuarios()
-      .subscribe(listausuarios => this.listaUsuarios = listausuarios);
+      .subscribe(listaUsuarios => this.listaUsuarios = listaUsuarios);
 
   }
 

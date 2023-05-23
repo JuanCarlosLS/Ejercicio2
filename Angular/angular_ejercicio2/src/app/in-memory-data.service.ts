@@ -5,17 +5,17 @@ import { Usuario } from './usuarios';
 @Injectable({
   providedIn: 'root'
 })
-export class InMemoryDataService implements InMemoryDataService{
+export class InMemoryDataService implements InMemoryDbService{
 createDb(){
-  const usuarios1 =[
+  const usuariosDb =[
     {id: 1, dni:'4876589W', nom:'Juan Carlos', ap:'Lopez Sempere', us: 'jcls', pas:'1234', f:'img', dir:'C. de las lomas blancas', tel:634986426,t_us:'1',ac:true },
     {id: 2, dni:'7866984R', nom:'Zaira', ap:'Lopez Sempere', us: 'zls', pas:'1234', f:'img', dir:'C. de las lomas blancas', tel:634983216,t_us:'1',ac:true },
     {id: 3, dni:'9158972E', nom:'Emma', ap:'Requena Lopez', us: 'erl', pas:'1234', f:'img', dir:'Plaza la viña', tel:695866216,t_us:'1',ac:true }
 ];
-return {usuarios1};
+return {usuariosDb};
 }
  
-genId(usuarios: Usuario[]): number {
-  return usuarios.length > 0 ? Math.max(...usuarios.map(usuarios1 => usuarios1.id)) + 1 : 11;
+genId(usuariosDb: Usuario[]): number {
+  return usuariosDb.length > 0 ? Math.max(...usuariosDb.map(usuariosDb => usuariosDb.id)) + 1 : 11;
 }
 }

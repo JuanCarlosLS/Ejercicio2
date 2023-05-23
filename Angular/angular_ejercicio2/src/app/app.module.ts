@@ -9,6 +9,7 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { BuscadorComponent } from './buscador/buscador.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MessagesComponent } from './messages/messages.component';
+
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 
