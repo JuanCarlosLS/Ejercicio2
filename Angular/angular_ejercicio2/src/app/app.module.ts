@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { UsuarioDetailComponent } from './usuario-detail/usuario-detail.component';
+import { UsuarioSearchComponent } from './usuario-search/usuario-search.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { UsuarioDetailComponent } from './usuario-detail/usuario-detail.componen
     BuscadorComponent,
     MessagesComponent,
     UsuarioDetailComponent,
+    UsuarioSearchComponent,
   ],
   imports: [
     BrowserModule,
