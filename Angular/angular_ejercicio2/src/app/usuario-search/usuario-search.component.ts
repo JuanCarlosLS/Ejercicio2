@@ -18,8 +18,7 @@ export class UsuarioSearchComponent  implements OnInit{
   
   constructor(private usuariosService: UsuariosService) {}
 
-  private searchTerms = new Subject<string>();
-
+ 
 // Push a search term into the observable stream.
 search(term: string): void {
   this.searchTerms.next(term);
