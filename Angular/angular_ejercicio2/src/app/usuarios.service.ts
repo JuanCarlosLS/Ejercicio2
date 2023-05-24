@@ -41,7 +41,19 @@ export class UsuariosService {
    //return listaObservabledeUsuarios;
   }
   
-  getUsuarioUnico(id: number): Observable<Usuario> {
+  getUsuarioNo404<Data>(id: number): Observable<Usuario> {
+    const url = `${this.usuariosUrl}/?id=${id}`;
+    return this.http.get<Usuario[]>(url)
+      .pipe(
+        map(usuarios => usuarios[0]), // returns a {0|1} element array
+        tap(h => {
+          const outcome = h ? 'fetched' : 'did not find';
+          this.log(`${outcome} usuario id=${id}`);
+        }),
+        catchError(this.handleError<Usuario>(`getUsuario id=${id}`))
+      );
+  }
+  getUsuario(id: number): Observable<Usuario> {
     const url = `${this.usuariosUrl}/${id}`;
     return this.http.get<Usuario>(url).pipe(
       tap(_ => this.log(`fetched usuario id=${id}`)),
@@ -60,8 +72,7 @@ export class UsuariosService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  deleteUsuario(usuario: Usuario | number): Observable<Usuario> {
-    const id = typeof usuario === 'number' ? usuario : usuario.nom;
+  deleteUsuario(id: number): Observable<Usuario> {
     const url = `${this.usuariosUrl}/${id}`;
   
     return this.http.delete<Usuario>(url, this.httpOptions).pipe(
@@ -72,7 +83,7 @@ export class UsuariosService {
 
   addUsuario(usuario: Usuario): Observable<Usuario> {
     return this.http.post<Usuario>(this.usuariosUrl, usuario, this.httpOptions).pipe(
-      tap((newHero: Usuario) => this.log(`added usuario w/ id=${usuario.id}`)),
+      tap((newUsuario: Usuario) => this.log(`added usuario w/ id=${usuario.id}`)),
       catchError(this.handleError<Usuario>('addUsuario'))
     );
   }

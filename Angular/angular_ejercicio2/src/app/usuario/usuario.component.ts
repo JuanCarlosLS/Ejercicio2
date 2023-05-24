@@ -32,7 +32,7 @@ export class UsuarioComponent implements OnInit{
     this.getUsuarios();
   }
 
-  public getUsuarios() {
+  getUsuarios() {
    this.usuariosService.getUsuarios()
       .subscribe(listaUsuarios => this.listaUsuarios = listaUsuarios);
 
@@ -40,7 +40,7 @@ export class UsuarioComponent implements OnInit{
 
   delete(usuario: Usuario): void {
     this.usuarios = this.usuarios.filter(u => u !== usuario);
-    this.usuariosService.deleteUsuario(usuario).subscribe();
+    this.usuariosService.deleteUsuario(usuario.id).subscribe();
   }
   
   add(nom: string): void {
