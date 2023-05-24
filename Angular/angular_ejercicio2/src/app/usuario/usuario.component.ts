@@ -4,6 +4,7 @@ import { Curso } from '../cursos';
 import { Usuario } from '../usuarios';
 import { UsuariosService } from '../usuarios.service';
 import { MessageService } from '../message.service';
+import { UsuarioDetailComponent } from '../usuario-detail/usuario-detail.component';
 
 @Component({
   selector: 'app-usuario',
@@ -37,14 +38,17 @@ export class UsuarioComponent implements OnInit{
 
   }
 
-  save(): void {
-    //this.usuariosService.updateUsuario(this.usuario)
-      //.subscribe(() => this.goBack());
-  }
-
   delete(usuario: Usuario): void {
-    this.usuarios = this.usuarios.filter(h => h !== usuario);
+    this.usuarios = this.usuarios.filter(u => u !== usuario);
     this.usuariosService.deleteUsuario(usuario).subscribe();
   }
   
+  add(nom: string): void {
+    nom = nom.trim();
+    if (!nom) { return; }
+    this.usuariosService.addUsuario({ nom } as Usuario)
+      .subscribe(usuario => {
+        this.usuarios.push(usuario);
+      });
+  }
 }

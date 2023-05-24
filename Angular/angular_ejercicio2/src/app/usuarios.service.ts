@@ -70,6 +70,26 @@ export class UsuariosService {
     );
   }
 
+  addUsuario(usuario: Usuario): Observable<Usuario> {
+    return this.http.post<Usuario>(this.usuariosUrl, usuario, this.httpOptions).pipe(
+      tap((newHero: Usuario) => this.log(`added usuario w/ id=${usuario.id}`)),
+      catchError(this.handleError<Usuario>('addUsuario'))
+    );
+  }
+
+  searchUsuarios(term: string): Observable<Usuario[]> {
+    if (!term.trim()) {
+      // if not search term, return empty hero array.
+      return of([]);
+    }
+    return this.http.get<Usuario[]>(`${this.usuariosUrl}/?name=${term}`).pipe(
+      tap(x => x.length ?
+         this.log(`found heroes matching "${term}"`) :
+         this.log(`no heroes matching "${term}"`)),
+      catchError(this.handleError<Usuario[]>('searchUsuarios', []))
+    );
+  }
+
   constructor(
     private http: HttpClient,
     private messageService: MessageService) { }

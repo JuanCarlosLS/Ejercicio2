@@ -11,6 +11,6 @@ export class UsuarioDetailComponent {
   
   save(): void {
     //this.usuariosService.updateUsuario(this.usuario)
-      //.subscribe(() => this.goBack());
+    //.subscribe(() => this.goBack());
   }
 }

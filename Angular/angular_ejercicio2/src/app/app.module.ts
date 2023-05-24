@@ -23,7 +23,7 @@ import { UsuarioDetailComponent } from './usuario-detail/usuario-detail.componen
     UsuarioComponent,
     BuscadorComponent,
     MessagesComponent,
-    UsuarioDetailComponent
+    UsuarioDetailComponent,
   ],
   imports: [
     BrowserModule,
