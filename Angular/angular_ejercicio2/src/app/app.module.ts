@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { UsuarioDetailComponent } from './usuario-detail/usuario-detail.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { InMemoryDataService } from './in-memory-data.service';
     PieDePaginaComponent,
     UsuarioComponent,
     BuscadorComponent,
-    MessagesComponent
+    MessagesComponent,
+    UsuarioDetailComponent
   ],
   imports: [
     BrowserModule,

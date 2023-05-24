@@ -32,7 +32,7 @@
     </div>
 </main>
     <br>
-<main class="container">
+    <!--<main class="container">
     <table class="table table-bordered">
         <thead class="table-light">
             <tr>
@@ -115,18 +115,19 @@
            {{usuario.dni}} 
            {{usuario.nom}}
         </div>
-    </div>
+    </div>-->
+    <main class="container">
     <div class="card">
-       <button (click)="save()">save</button>
         <ul class="card-body">
     <li *ngFor="let usuario of listaUsuarios">
       <a routerLink="/detail/{{usuario.nom}}">
-        <span class="badge">{{usuario.nom}}</span> {{usuario.name}}
+        <span >{{usuario.nom}}</span> {{usuario.name}}
       </a>
-      <button class="delete" title="delete usuario"
+      <button class="btn btn-outline-secondary" title="delete usuario"
         (click)="delete(usuario)">x</button>
     </li>
   </ul>
     </div>
-  
+    <br>
+    <app-usuario-detail></app-usuario-detail>
 </main>
