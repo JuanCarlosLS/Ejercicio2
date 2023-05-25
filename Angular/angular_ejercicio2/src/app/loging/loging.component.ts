@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuariosService } from '../usuarios.service';
 
 @Component({
   selector: 'app-loging',
@@ -6,7 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./loging.component.css']
 })
 export class LogingComponent implements  OnInit{
-  constructor() { }
+  Usuario1: [];
+  password:  [];
+  
+  constructor(public usuariosService: UsuariosService) {
+    this.Usuario1 = [];
+    this.password = [];
+   }
+
+login(){
+  const user = { Usuario1: this.Usuario1, password: this.password };
+  this.usuariosService.login(user).subscribe((data) => {
+    console.log(data);
+  });
+}
 
   ngOnInit() {
     // Example starter JavaScript for disabling form submissions if there are invalid fields

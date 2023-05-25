@@ -16,6 +16,8 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { UsuarioDetailComponent } from './usuario-detail/usuario-detail.component';
 import { UsuarioSearchComponent } from './usuario-search/usuario-search.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CookieService } from "ngx-cookie-service";
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { UsuarioSearchComponent } from './usuario-search/usuario-search.componen
     MessagesComponent,
     UsuarioDetailComponent,
     UsuarioSearchComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,7 @@ import { UsuarioSearchComponent } from './usuario-search/usuario-search.componen
       InMemoryDataService, { dataEncapsulation: false }
     )
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
   
 })

@@ -8,7 +8,7 @@ const routes: Routes = [
   {path:'', redirectTo: '/loging', pathMatch: 'full'},
   {path:'loging',component: LogingComponent},
   {path:'usuario',component: UsuarioComponent},
-  {path:'buscador',component: BuscadorComponent}
+  {path:'buscador',component: BuscadorComponent},
 ];
 
 

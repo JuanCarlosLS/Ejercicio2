@@ -1,9 +1,9 @@
-<div *ngIf="usuario">
-    <h2>{{usuario.nom | uppercase}} Details</h2>
-    <div><span>id: </span>{{usuario.id}}</div>
+<div *ngIf=" listaUsuarios">
+    <h2>{{ listaUsuarios.nom | uppercase}} Details</h2>
+    <div><span>id: </span>{{ listaUsuarios.id}}</div>
     <div>
       <label for="usuario-nom">Usuario nom: </label>
-      <input id="usuario-nom" [(ngModel)]="usuario.nom" placeholder="Usuario nom"/>
+      <input id="usuario-nom" [(ngModel)]=" listaUsuarios.id" placeholder="Usuario nom"/>
     </div>
     <button class="btn btn-primary" type="button" (click)="goBack()">Atras</button>
     <button class="btn btn-primary" type="button" (click)="save()">Guardad</button>

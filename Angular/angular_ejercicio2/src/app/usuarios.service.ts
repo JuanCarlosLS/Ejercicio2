@@ -5,15 +5,25 @@ import { Usuario } from './usuarios';
 import { USUARIOS } from './mock-datos';
 import { MessageService } from './message.service';
 import { catchError, map, tap } from 'rxjs/operators';
+import { CookieService } from "ngx-cookie-service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuariosService {
-
+  login(user: any): Observable<any> {
+    return this.http.post("http://localhost:8080/api/usuarios", user);
+  }
   private usuariosUrl: string = 'api/usuariosDb';
   private log(message: string) {
     this.messageService.add(`UsuarioService: ${message}`);
+  }
+
+ // setToken(token: String) {
+   // this.cookies.set("token", token);
+  //}
+  getToken() {
+    return this.cookies.get("token");
   }
 
   private handleError<T>(operation = 'operation', result?: T) {
@@ -95,13 +105,14 @@ export class UsuariosService {
     }
     return this.http.get<Usuario[]>(`${this.usuariosUrl}/?name=${term}`).pipe(
       tap(x => x.length ?
-         this.log(`found heroes matching "${term}"`) :
-         this.log(`no heroes matching "${term}"`)),
+         this.log(`found usuario matching "${term}"`) :
+         this.log(`no usuario matching "${term}"`)),
       catchError(this.handleError<Usuario[]>('searchUsuarios', []))
     );
   }
 
   constructor(
     private http: HttpClient,
-    private messageService: MessageService) { }
+    private messageService: MessageService,
+    private cookies: CookieService) { }
   }

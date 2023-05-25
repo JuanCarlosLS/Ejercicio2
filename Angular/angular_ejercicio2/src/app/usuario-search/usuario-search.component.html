@@ -6,7 +6,7 @@
     <ul class="search-result">
       <li *ngFor="let usuario of listaUsuarios$ | async" >
         <a routerLink="/detail/{{usuario.id}}">
-          {{usuario.nom}}
+          {{usuario.id}}
         </a>
       </li>
     </ul>

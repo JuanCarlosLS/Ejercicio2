@@ -10,7 +10,9 @@ import { Location } from '@angular/common';
   styleUrls: ['./usuario-detail.component.css']
 })
 export class UsuarioDetailComponent implements OnInit{
-  usuario: Usuario | undefined;
+ 
+  listaUsuarios: Usuario |  undefined;
+
 
   constructor(
     private route: ActivatedRoute,
@@ -25,7 +27,7 @@ export class UsuarioDetailComponent implements OnInit{
   getUsuario(): void {
     const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
     this.usuariosService.getUsuario(id)
-    .subscribe(usuario => this.usuario = usuario);
+    .subscribe( listaUsuarios => this. listaUsuarios =  listaUsuarios);
   }
 
   goBack(): void {
@@ -34,8 +36,8 @@ export class UsuarioDetailComponent implements OnInit{
 
 
   save(): void {
-    if (this.usuario) {
-      this.usuariosService.updateUsuario(this.usuario)
+    if (this. listaUsuarios) {
+      this.usuariosService.updateUsuario(this. listaUsuarios)
         .subscribe(() => this.goBack());
     }
   }
